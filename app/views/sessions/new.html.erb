@@ -1,15 +1,17 @@
-<h1>Log In</h1>
+<h1 class="session__form--heading">Log In</h1>
 
-<form action="/session" method="POST">
+<form class="login__form" action="/session" method="POST">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-    <label for="user_email">Email</label>
-    <input id="user_email" name="user[email]" type="text">
-    <br>
+    <div class="login__email--container">
+        <label for="user_email">Email</label>
+        <input id="user_email" name="user[email]" type="text">
+    </div>
 
-    <label for="user_password">Password</label>
-    <input id="user_password" name="user[password]" type="password">
-    <br>
+    <div class="login__password--container">
+        <label for="user_password">Password</label>
+        <input id="user_password" name="user[password]" type="password">
+    </div>
 
-    <input type="submit" value="Log In">
+    <input class="login__submit" type="submit" value="Log In">
 </form>

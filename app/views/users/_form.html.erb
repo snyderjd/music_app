@@ -2,19 +2,21 @@
 <% method = user.persisted? ? "patch" : "post" %>
 <% message = user.persisted? ? "Update User" : "Create User" %>
 
-<form action="<%= action %>" method="POST">
+<form class="login__form" action="<%= action %>" method="POST">
     <%# Hidden inputs for method action and authenticity_token %>
     <input type="hidden" name="_method" value="<%= method %>">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
 
     <%# Labels and inputs for email and password %>
-    <label for="user_email">Email Address</label>
-    <input type="text" id="user_email" name="user[email]">
-    <br>
+    <div class="login__email--container">
+        <label class="login__email--item" for="user_email">Email Address</label>
+        <input class="login__email-- item" type="text" id="user_email" name="user[email]">
+    </div>
 
-    <label for="user_password">Password</label>
-    <input type="password" id="user_password" name="user[password]">
-    <br>
+    <div class="login__password--container">
+        <label class="login__password--item" for="user_password">Password</label>
+        <input class="login__password--item" type="password" id="user_password" name="user[password]">
+    </div>
 
-    <input type="submit" value="<%= message %>">
+    <input class="login__submit" type="submit" value="<%= message %>">
 </form>

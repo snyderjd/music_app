@@ -33,6 +33,32 @@
      width: 30%;
  }
 
- .nav__list--item {
-
+ .users__new--heading, .session__form--heading {
+     width: 50%;
+     margin: auto;
+     margin-top: 100px;
+     margin-bottom: 10px;
+     text-align: center;
  }
+
+ .login__form {
+     width: 40%;
+     margin: auto;
+     border: solid 2px black;
+     background-color: lightblue;
+     align-items: center;
+     text-align: center;
+     padding: 10px;
+ }
+
+ .login__email--container, .login__password--container {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-top: 10px;
+ }
+
+ .login__submit {
+     width: 20%;
+ }
+
