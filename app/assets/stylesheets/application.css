@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+ .navbar {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background-color: lightseagreen;
+ }
+
+ .music-app-header {
+     font-size: 18pt;
+     margin-left: 20px;
+ }
+
+ .nav__list {
+     display: flex;
+     justify-content: space-evenly;
+     list-style-type: none;
+     width: 30%;
+ }
+
+ .nav__list--item {
+
+ }
