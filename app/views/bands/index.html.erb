@@ -4,6 +4,15 @@
     <% @bands.each do |band|%>
         <h3> <%= band.name %> </h3>
         <a href="<%= band_url(band.id) %>">View</a>
+        <a href="<%= edit_band_url(band.id) %>">Edit</a>
+        <a href="<%= band_url(band.id)%>" data-method="DELETE">Delete</a>
     <% end %>
+
 </div>
+
+<br>
+
+<a href="<%= new_band_url %>">Create Band</a>
+
+
 
