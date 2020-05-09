@@ -12,9 +12,17 @@
   <nav class="navbar">
     <a class="music-app-header">Music App<a>
     <ul class="nav__list">
-      <li class="nav__list--item"><a href="<%= bands_url %>" >Bands</a></li>
-      <li class="nav__list--item"><a>Profile</a></li>
-      <li class="nav__list--item"><a>Logout</a></li>
+      
+      <% if current_user %>
+        <li class="nav__list--item"><a href="<%= bands_url %>" >Bands</a></li>
+        <li class="nav__list--item"><a href="<%= user_url(current_user)%>">Profile</a></li>
+        <li class="nav__list--item"><%= current_user.email %></li>
+        <li class="nav__list--item"><a href="<%= session_url %>" data-method="DELETE">Logout</a></li>
+      <% else %>
+        <li class="nav__list--item"><a href="<%= new_session_url %>">Login</a>
+        <li class="nav__list--item"><a href="<%= new_user_url%>">Register</a>
+      <% end %>
+      
     </ul>
   </nav>
 
