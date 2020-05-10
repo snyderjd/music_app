@@ -1,0 +1,17 @@
+<h3>Album: <%= @album.title %></h1>
+
+<table>
+    <tr>
+        <th>Band</th>
+        <td><%= @album.band.name %></td>
+    </tr>
+    <tr>
+        <th>Year</th>
+        <td><%= @album.year %></td>
+    </tr>
+    <tr>
+        <th>Live?</th>
+        <td><%= @album.is_live ? "Yes" : "No" %></td>
+    </tr>
+</table>
+

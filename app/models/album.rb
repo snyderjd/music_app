@@ -1,29 +1,8 @@
 class Album < ApplicationRecord
-    validates :title, :year, :is_live, :band, presence: true
+    validates :title, :year, :band, presence: true
+
+    # Can't user presence validation with boolean field
+    validates :is_live, inclusion: { in: [true, false] }
     
     belongs_to :band
 end
-
-# class Cat < ApplicationRecord
-#     include ActionView::Helpers::DateHelper
-  
-#     # .freeze renders a constant immutable.
-#     CAT_COLORS = %w(black white orange brown).freeze
-  
-#     validates :color, inclusion: CAT_COLORS
-#     validates :sex, inclusion: %w(M F)
-#     validates :birth_date, :color, :name, :sex, :user, presence: true
-  
-#     # Remember, has_many is just a method where the first argument is
-#     # the name of the association, and the second argument is an options
-#     # hash.
-#     has_many :rental_requests,
-#       class_name: :CatRentalRequest,
-#       dependent: :destroy
-  
-#     belongs_to :user
-  
-#     def age
-#       time_ago_in_words(birth_date)
-#     end
-#   end
