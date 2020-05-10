@@ -14,4 +14,12 @@
         <td><%= @album.is_live ? "Yes" : "No" %></td>
     </tr>
 </table>
+<br>
+
+<a href="<%= band_url(@album.band_id) %>">Back</a>
+
+<a href="<%= edit_album_url(@album.id) %>">Edit Album</a>
+
+<a href="<%= album_url(@album.id) %>" data-method="DELETE">Delete Album</a>
+
 

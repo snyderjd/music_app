@@ -2,7 +2,7 @@
 <% method = (album.persisted? ? :patch : :post) %>
 
 <form action="<%= action %>" method="POST">
-    <input type="hidden" name="_method" method="<%= method %>">
+    <input type="hidden" name="_method" value="<%= method %>">
 
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
