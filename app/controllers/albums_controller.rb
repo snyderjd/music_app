@@ -57,12 +57,6 @@ class AlbumsController < ApplicationController
         redirect_to band_url(album.band_id)
     end
 
-    # def destroy
-    #     artwork = Artwork.find(params[:id])
-    #     artwork.destroy
-    #     render json: artwork
-    # end
-
     private
 
     def album_params

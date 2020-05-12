@@ -1,0 +1,59 @@
+<% action = (track.persisted? ? track_url(track.id) : tracks_url) %>
+<% method = (track.persisted? ? :patch : :post ) %>
+
+<form action="<%= action %>" method="POST">
+    <input type="hidden" name="_method" value="<%= method %>">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <%# album_id of track - use dropdown %>
+    <label for="track_album_id">Album</label>
+    <select name="track[album_id]" id="track_album_id">
+        <% albums.each do |album| %>
+            <option <%= track.album_id == album.id ? "selected" : "" %> value="<%= album.id %>">
+                <%= album.title %>
+            </option>
+        <% end %>
+    </select>
+    <br>
+
+    <%# title of track %>
+    <label for="track_title">Title</label>
+    <input type="text" id="track_title" name="track[title]" value="<%= track.title %>">
+    <br>
+
+    <%# order of track %>
+    <label for="track_order">Order</label>
+    <input type="number" id="track_order" name="track[order]" value="<%= track.order %>">
+    <br>
+
+    <%# is_bonus - use radio buttons %>
+    <input
+        type="radio"
+        name="track[is_bonus]"
+        id="track_is_bonus_false"
+        value="false"
+        <%= track.is_bonus == false ? "checked" : "" %>
+    />
+    <label for="track_is_bonus_false">Regular Track</label>
+
+    <input
+        type="radio"
+        name="track[is_bonus]"
+        id="track_is_bonus_true"
+        value="true"
+        <%= track.is_bonus == true ? "checked" : ""%>
+    />
+    <label for="track_is_bonus_true">Bonus Track</label>
+    <br>
+
+    <%# lyrics - use textarea %>
+    <label>
+        Lyrics
+        <textarea name="track[lyrics]"><%= track.lyrics %></textarea>
+    </label>
+    <br>
+
+    <%# submit %>
+    <% submit_text = (track.persisted? ? "Update Track" : "Add Track") %>
+    <input type="submit" value="<%= submit_text %>">
+</form>
