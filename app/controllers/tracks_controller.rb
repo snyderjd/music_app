@@ -29,6 +29,33 @@ class TracksController < ApplicationController
         end
     end
 
+    # GET to /tracks/id/edit - renders form to edit a track
+    def edit
+        @track = Track.find(params[:id])
+        @albums = Album.all
+        render :edit
+    end
+
+    # PATCH to /tracks/id - updates track and saves to the DB
+    def update
+        @track = Track.find(params[:id])
+        @albums = Album.all
+
+        if @track.update_attributes(track_params)
+            redirect_to track_url(@track.id)
+        else
+            flash.now[:errors] = @track.errors.full_messages
+            render :edit
+        end
+    end
+
+    # DELETE to /tracks/id - deletes a track from the database
+    def destroy
+        track = Track.find(params[:id])
+        track.destroy
+        redirect_to album_url(track.album_id)
+    end
+
     private
 
     def track_params
