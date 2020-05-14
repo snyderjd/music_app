@@ -1,24 +1,25 @@
-<h3>Track: <%= @track.title %></h3>
+<h1 class="view__heading">Track: <%= @track.title %></h1>
 
-<table>
-    <tr>
-        <th>Album</th>
-        <td><%= @album.title %></td>
-    </tr>
-    <tr>
-        <th>Number</th>
-        <td><%= @track.order %></td>
-    </tr>
-    <tr>
-        <th>Bonus Track?</th>
-        <td><%= @track.is_bonus ? "Yes" : "No" %></td>
-    </tr>
-</table>
-<br>
+<div class="view__container">
+    <table class="view__table">
+        <tr>
+            <th>Album</th>
+            <td><%= @album.title %></td>
+        </tr>
+        <tr>
+            <th>Number</th>
+            <td><%= @track.order %></td>
+        </tr>
+        <tr>
+            <th>Bonus Track?</th>
+            <td><%= @track.is_bonus ? "Yes" : "No" %></td>
+        </tr>
+    </table>
+    <br>
 
-<p><%= @track.lyrics %></p>
+    <p><%= @track.lyrics %></p>
 
-<a href="<%= album_url(@track.album_id) %>">Back</a>
-<a href="<%= edit_track_url(@track.id) %>">Edit Track</a>
-<a href="<%= track_url(@track.id) %>" data-method="DELETE">Delete Track</a>
-
+    <a href="<%= album_url(@track.album_id) %>">Back</a>
+    <a href="<%= edit_track_url(@track.id) %>">Edit Track</a>
+    <a href="<%= track_url(@track.id) %>" data-method="DELETE">Delete Track</a>
+</div>

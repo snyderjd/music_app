@@ -1,5 +1,5 @@
 class BandsController < ApplicationController
-    before_action :require_current_user, only: [:index, :new, :create, :edit, :update, :destroy]
+    before_action :require_current_user, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
     # Returns index view, list of all the bands
     def index

@@ -33,10 +33,19 @@
      width: 30%;
  }
 
- .users__new--heading, .session__form--heading {
+ .users__new--heading, 
+ .session__form--heading {
      width: 50%;
      margin: auto;
      margin-top: 100px;
+     margin-bottom: 10px;
+     text-align: center;
+ }
+
+ .view__heading {
+     width: 50%;
+     margin: auto;
+     margin-top: 20px;
      margin-bottom: 10px;
      text-align: center;
  }
@@ -66,9 +75,25 @@
  table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
-  }
+ }
+
   th, td {
     padding: 5px;
     text-align: left;
+ }
+
+  .view__container {
+    width: 80%;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
   }
+
+  .view__table {
+      margin: auto;
+  }
+
+
+  
 

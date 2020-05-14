@@ -1,13 +1,15 @@
-<h1><%= @band.name %></h1>
+<h1 class="view__heading"><%= @band.name %></h1>
 
-<h3>Albums</h3>
 
-<% @band.albums.each do |album| %>
-    <a href="<%= album_url(album.id) %>"><%= album.title %></a>
+<h3 class="view__heading">Albums</h3>
+
+<div class="view__container">
+    <% @band.albums.each do |album| %>
+        <a href="<%= album_url(album.id) %>"><%= album.title %></a>
+        <br>
+    <% end %>
+
     <br>
-<% end %>
 
-<br>
-
-<a href="<%= new_band_album_url(@band.id)%>">Add Album</a>
-
+    <a href="<%= new_band_album_url(@band.id)%>">Add Album</a>
+</div>

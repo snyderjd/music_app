@@ -1,5 +1,6 @@
-<h1>Edit Album</h1>
+<h1 class="view__heading">Edit Album</h1>
 
-<%= render 'shared/errors' %>
-
-<%= render 'form', album: @album, bands: @bands %>
+<div class="view__container">
+    <%= render 'shared/errors' %>
+    <%= render 'form', album: @album, bands: @bands %>
+</div>
