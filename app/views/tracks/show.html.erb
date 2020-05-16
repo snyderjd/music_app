@@ -22,10 +22,19 @@
     <a href="<%= album_url(@track.album_id) %>">Back</a>
     <a href="<%= edit_track_url(@track.id) %>">Edit Track</a>
     <a href="<%= track_url(@track.id) %>" data-method="DELETE">Delete Track</a>
-</div>
 
-<h3 class="view__heading">Notes</h3>
+    <h3 class="view__heading">Notes</h3>
 
-<div class="view__container">
+    <% @track.notes.each do |note| %>
+        <div class="note__container">
+            <p class="note__container--email"><%= note.user.email %></p>
+            <p class="note__container--content"><%= note.content %></p>
+        </div>
+    <% end %>
+
     <%= render 'notes/form', track: @track %>
+
 </div>
+
+
+

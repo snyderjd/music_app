@@ -94,6 +94,21 @@
       margin: auto;
   }
 
+  .note__container {
+      display: flex;
+      margin: 10px;
+  }
+
+  .note__container--email {
+      width: 25%;
+      text-align: left;
+  }
+
+  .note__container--content {
+      width: 75%;
+      text-align: left;
+  }
+
 
   
 
