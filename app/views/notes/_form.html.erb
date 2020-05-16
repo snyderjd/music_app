@@ -1,0 +1,15 @@
+<%# Form renders on tracks show page so users can add notes to a track %>
+
+<form action="<%= notes_url %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" id="note_track_id" name="note[track_id]" value="<%= track.id %>">
+
+    <%# Note content %>
+    <p>
+        <label for="note_content">Content</label>
+        <textarea id="note_content" name="note[content]" rows="5" cols="30"></textarea>
+    <p>
+    <br>
+
+    <input type="submit" value="Add Note">
+</form>

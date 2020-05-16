@@ -23,3 +23,9 @@
     <a href="<%= edit_track_url(@track.id) %>">Edit Track</a>
     <a href="<%= track_url(@track.id) %>" data-method="DELETE">Delete Track</a>
 </div>
+
+<h3 class="view__heading">Notes</h3>
+
+<div class="view__container">
+    <%= render 'notes/form', track: @track %>
+</div>
