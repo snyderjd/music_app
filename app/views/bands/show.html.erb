@@ -5,11 +5,11 @@
 
 <div class="view__container">
     <% @band.albums.each do |album| %>
-        <a href="<%= album_url(album.id) %>"><%= album.title %></a>
+        <a class="view__link" href="<%= album_url(album.id) %>"><%= album.title %></a>
         <br>
     <% end %>
 
     <br>
 
-    <a href="<%= new_band_album_url(@band.id)%>">Add Album</a>
+    <a class="view__link" href="<%= new_band_album_url(@band.id)%>">Add Album</a>
 </div>

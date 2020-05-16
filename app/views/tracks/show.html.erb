@@ -19,9 +19,9 @@
 
     <p><%= @track.lyrics %></p>
 
-    <a href="<%= album_url(@track.album_id) %>">Back</a>
-    <a href="<%= edit_track_url(@track.id) %>">Edit Track</a>
-    <a href="<%= track_url(@track.id) %>" data-method="DELETE">Delete Track</a>
+    <a class="view__link" href="<%= album_url(@track.album_id) %>">Back</a>
+    <a class="view__link" href="<%= edit_track_url(@track.id) %>">Edit Track</a>
+    <a class="view__link" href="<%= track_url(@track.id) %>" data-method="DELETE">Delete Track</a>
 
     <h3 class="view__heading">Notes</h3>
 
@@ -30,7 +30,7 @@
             <p class="note__container--email"><%= note.user.email %></p>
             <p class="note__container--content"><%= note.content %></p>
             <% if note.user.id == current_user.id %>
-                <a href="<%= note_url(note.id) %>" data-method="DELETE">Delete</a>
+                <a class="note__container--delete"href="<%= note_url(note.id) %>" data-method="DELETE">Delete</a>
             <% end %>
         </div>
     <% end %>
