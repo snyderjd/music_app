@@ -29,6 +29,9 @@
         <div class="note__container">
             <p class="note__container--email"><%= note.user.email %></p>
             <p class="note__container--content"><%= note.content %></p>
+            <% if note.user.id == current_user.id %>
+                <a href="<%= note_url(note.id) %>" data-method="DELETE">Delete</a>
+            <% end %>
         </div>
     <% end %>
 

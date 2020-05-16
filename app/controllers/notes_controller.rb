@@ -14,6 +14,13 @@ class NotesController < ApplicationController
         end
     end
 
+    # DELETE to /notes/id - deletes a note
+    def destroy
+        note = current_user.notes.find(params[:id])
+        note.destroy
+        redirect_to track_url(note.track_id)
+    end
+
     private
 
     def note_params
